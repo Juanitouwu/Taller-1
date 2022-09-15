@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "scripts": { 
+    "init-api": "json-server --watch db.json --port 5000"
+  }
+
+}
