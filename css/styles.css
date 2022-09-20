@@ -76,6 +76,7 @@ label{
 
 .success .frm-icono{
     color: rgb(15, 218, 15);
+    visibility: visible;
 }
 .error .frm-icono{
     color: rgb(218, 15, 15);
@@ -83,4 +84,11 @@ label{
 .error .frm-icono{
     visibility:visible;
     opacity: 1;
+}
+.msn-error-visible{
+    visibility: visible;
+    opacity: 1;
+}
+.frm-icono{
+    visibility: hidden;
 }
