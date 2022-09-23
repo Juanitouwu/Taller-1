@@ -67,16 +67,43 @@ const validarCampos=(e)=>{
         break;
         case "password":
             validarInput(reglas.password,e.target,e.target.name)
-    
+            validarPassword();
         break;
         case "password2":
-            validarInput(reglas.password,e.target,e.target.name)
+            validarPassword();
     
         break;
       
         
     }
 }
+const validarPassword=()=>{
+    const pass1 = document.getElementById('password');
+    const pass2 = document.getElementById('password2');
+
+    if (pass1.value === pass2.value){
+        document.getElementById(`g-password2`).classList.remove('error');
+
+        document.getElementById(`g-password2`).classList.add('success');
+
+        document.querySelector(`#g-password2 .msn-error`).classList.remove('msn-error-visible');
+
+        document.querySelector("#g-password2 i").classList.add('fa-circle-check')
+
+        document.querySelector("#g-password2 i").classList.remove('fa-triangle-exclamation')
+        inputs['password'] = true;
+    } else {
+        document.getElementById('g-password2').classList.add('error'); 
+
+        document.querySelector("#g-password2 .msn-error").classList.add('msn-error-visible');
+
+        document.querySelector("#g-password2 i").classList.remove('fa-circle-check')
+
+        document.querySelector("#g-password2 i").classList.add('fa-triangle-exclamation')
+        inputs['password'] = false;
+    }
+}
+
 
 campos.forEach((campo)=>{
     campo.addEventListener("keyup",validarCampos);
